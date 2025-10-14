@@ -1,0 +1,1 @@
+export { azureVmPlugin, AzureVmPage } from './plugin';
