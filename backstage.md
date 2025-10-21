@@ -48,7 +48,40 @@ This document provides an overview of the file structure and main functionality 
   - **content/**: Files used by the template (catalog-info.yaml, index.js, package.json).
 
 ### /plugins
-- Placeholder for custom Backstage plugins. Contains a README with instructions.
+- **azure-vm/**: Frontend plugin for Azure VM management
+  - **src/components/**: React components for VM management
+    - **AzureVmPage.tsx**: Main page component for VM management
+    - **LaunchVmForm.tsx**: Form component for launching new VMs
+    - **VmList.tsx**: Component for listing and managing existing VMs
+  - **src/plugin.ts**: Plugin registration and routing
+- **azure-vm-backend/**: Backend plugin for Azure integration
+  - **src/service/**: Core Azure integration services
+    - **AzureVMManager.ts**: Azure SDK integration for VM operations
+    - **standaloneServer.ts**: Standalone server setup
+  - **src/router.ts**: API route definitions for VM operations
+
+### Custom Plugin Features
+#### Azure VM Management Plugin
+- **Frontend Capabilities**:
+  - Custom VM creation form with size and image selection
+  - VM listing and status monitoring
+  - Start/Stop/Delete operations
+  - Resource group management
+
+- **Backend Integration**:
+  - Azure SDK integration for VM operations
+  - Custom image listing and selection
+  - Resource group management
+  - VM lifecycle management
+  - Status monitoring and updates
+
+- **Configuration**:
+  - Azure credentials configuration in app-config.local.yaml
+  - Environment variables for Azure authentication:
+    - AZURE_CLIENT_ID
+    - AZURE_CLIENT_SECRET
+    - AZURE_TENANT_ID
+    - AZURE_SUBSCRIPTION_ID
 
 ---
 
